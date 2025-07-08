@@ -1,2 +1,3 @@
 # Diplom_2
-Тестирование ручки API для Stellar Burgers
+## Елена Ермоленкова Когорта 20
+## Тестирование ручки API для Stellar Burgers
