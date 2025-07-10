@@ -11,7 +11,7 @@
 
 ### <h>2. Запустить все тесты:</h>
 
-> pytest -v
+> pytest tests --alluredir=allure_results
 
 ### <h>3. Посмотреть отчет по прогону html</h>
 
@@ -22,18 +22,18 @@
 
 <h3 align="left" style="color:green">Project files and description:</h3>
 
-| Название файла           | Содержание файла               |
-|--------------------------|--------------------------------|
-| tests dir                | Директория с тестами           |
-| ?test_create_bookings.py | Тесты на создание бронирования |
-| ?test_delete_booking.py  | Тесты на удаление бронирования |
-| conftest.py              | Фикстуры                       |
-| ?helpers.py              | Хэлпер для тела запросов       |
-| ?data.py                 | Файл с URL и body запросов     |
-| ? auth_methods.py        | http клиент к auth методам     |
-| ?booking_methods.py      | http клиент к booking методам  |
-| ?generators.py           | Генератор данных               |
-| requirements.txt         | Файл с зависимостями           |
-| allure_results.dir       | Папка с отчетами Allure        |
+| Название файла         | Содержание файла               |
+|------------------------|--------------------------------|
+| tests dir              | Директория с тестами           |
+| test_create_user.py    | Тесты на создание пользователя |
+| ?test_delete_booking.py | Тесты на удаление бронирования |
+| conftest.py            | Фикстуры                       |
+| ?helpers.py            | Хэлпер для тела запросов       |
+| ?data.py               | Файл с URL и body запросов     |
+| ? auth_methods.py      | http клиент к auth методам     |
+| ?booking_methods.py    | http клиент к booking методам  |
+| ?generators.py         | Генератор данных               |
+| requirements.txt       | Файл с зависимостями           |
+| allure_results.dir     | Папка с отчетами Allure        |
 
 
