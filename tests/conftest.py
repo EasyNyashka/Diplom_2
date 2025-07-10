@@ -12,6 +12,10 @@ def create_and_delete_user():
     yield {
         'response': response,
         'user_data': user_data,
-        'token': token
+        'accessToken': token
     }
     requests.delete(f'{Url.BASE_URL}{Url.DELETE_USER}',headers={'Authorization': f'Bearer {token}'})
+
+@pytest.fixture
+def auth_token(create_and_delete_user):
+    return create_and_delete_user['accessToken']

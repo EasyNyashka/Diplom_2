@@ -1,8 +1,10 @@
 import pytest
 import allure
 import requests
+
 from data import Url
 from generators import generate_user_not_email, generate_user_not_password, generate_user_not_name
+
 
 class TestCreateUser:
     @allure.title('Создание уникального пользователя')
