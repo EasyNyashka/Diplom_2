@@ -7,3 +7,9 @@ class Url:
     MAKE_ORDER = '/api/orders'
     GET_ORDERS = '/api/orders'
     headers = {'Content-Type': 'application/json'}
+
+class User:
+
+    data_invalid = {
+        "email": 'Elena23@yandex.ru',
+        "password": "777777"}
