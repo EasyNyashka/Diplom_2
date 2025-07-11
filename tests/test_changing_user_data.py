@@ -14,9 +14,9 @@ class TestChangingUserData:
         ('name', 'new_name')
         ])
     def test_changing_user_data_auth(self, data_user, auth_token,new_value):
-        headers = {**Url.headers,'Authorization': f'Bearer {auth_token}'}
+        token = {**Url.headers,'Authorization': auth_token}
         data = {data_user: new_value}
-        response = requests.patch(f'{Url.BASE_URL}{Url.CHANGE_USER_DATA}',json=data, headers=headers)
+        response = requests.patch(f'{Url.BASE_URL}{Url.CHANGE_USER_DATA}',json=data, headers=token)
         assert response.status_code == 200
         assert response.json()['success'] == True
         assert response.json()['user'][data_user] == new_value
