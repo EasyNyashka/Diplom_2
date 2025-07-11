@@ -7,6 +7,7 @@ from generators import generate_user_not_email, generate_user_not_password, gene
 
 
 class TestCreateUser:
+
     @allure.title('Создание уникального пользователя')
     def test_create_user(self, create_and_delete_user):
         data = create_and_delete_user
