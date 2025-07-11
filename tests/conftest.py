@@ -13,7 +13,7 @@ def create_and_delete_user():
         'response': response,
         'user_data': user_data,
         'accessToken': token
-    }
+        }
     requests.delete(f'{Url.BASE_URL}{Url.DELETE_USER}',headers={'Authorization': f'Bearer {token}'})
 
 @pytest.fixture

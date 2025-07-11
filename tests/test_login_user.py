@@ -10,7 +10,8 @@ class TestLoginUser:
     def test_login_user(self, create_and_delete_user):
         data = create_and_delete_user['user_data']
         response = requests.post(f'{Url.BASE_URL}{Url.LOGIN}', json=data)
-        assert response.status_code == 200 and response.json().get('success') == True
+        assert response.status_code == 200
+        assert response.json()['success'] == True
 
     @allure.title('Авторизация пользователя с неверным логином и паролем')
     def test_login_invalid_login_or_password(self):

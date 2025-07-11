@@ -3,7 +3,7 @@ import allure
 import requests
 
 from data import Url
-from generators import generate_user_not_email, generate_user_not_password, generate_user_not_name
+from generators import generate_user_no_email, generate_user_no_password, generate_user_no_name
 
 
 class TestCreateUser:
@@ -25,11 +25,10 @@ class TestCreateUser:
         assert duplicate_response.status_code == 403
         assert duplicate_response.json() == {"success": False, "message": "User already exists"}
 
-    @pytest.mark.parametrize('user_incomplete_data', [generate_user_not_email, generate_user_not_password, generate_user_not_name])
-    @allure.title('Если одного из полей нет, запрос возвращает ошибку')
-    def test_create_courier_data_invalid(self, user_incomplete_data):
+    @pytest.mark.parametrize('user_incomplete_data', [generate_user_no_email, generate_user_no_password, generate_user_no_name])
+    @allure.title('Создание пользователя при не заполненном одним из обязательных полей')
+    def test_create_user_data_invalid(self, user_incomplete_data):
         incomplete_data = user_incomplete_data()
-        expected_response = {"success": False,"message": "Email, password and name are required fields"}
         response = requests.post(f'{Url.BASE_URL}{Url.CREATE_USER}', json=incomplete_data)
         assert response.status_code == 403
-        assert response.json() == expected_response
+        assert response.json() == {"success": False,"message": "Email, password and name are required fields"}

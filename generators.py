@@ -10,35 +10,35 @@ def generate_user():
         'email': email,
         'password': password,
         'name': name
-    }
+         }
     return user_data
 
-def generate_user_not_email():
+def generate_user_no_email():
     password = fake.password()
     name = fake.name()
-    user_data_not_email = {
+    user_data_no_email = {
         'email': '',
         'password': password,
         'name': name
-    }
-    return user_data_not_email
+         }
+    return user_data_no_email
 
-def generate_user_not_password():
+def generate_user_no_password():
     email = fake.email()
     name = fake.name()
-    user_data_not_password = {
+    user_data_no_password = {
         'email': email,
         'password': '',
         'name': name
-    }
-    return user_data_not_password
+        }
+    return user_data_no_password
 
-def generate_user_not_name():
+def generate_user_no_name():
     email = fake.email()
     password = fake.password()
-    user_data_not_name = {
+    user_data_no_name = {
         'email': email,
         'password': password,
         'name': ''
-    }
-    return user_data_not_name
+        }
+    return user_data_no_name
